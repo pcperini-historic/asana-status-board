@@ -25,7 +25,7 @@
     
     .taskCompletionDate
     {
-        width: 48px;
+        width: 64px;
         text-align: right;
         font-size: large;
     }
@@ -41,12 +41,14 @@
         <td class="taskAssigneeName">
             {{ task.assignee.name }}
         </td>
-        <td class="taskName">
+        <td class="taskName" colspan="{{ 1 if task.notes else 2 }}">
             {{ task.name }}
         </td>
+        {% if task.notes %}
         <td class="taskNotes">
             {{ task.notes }}
         </td>
+        {% endif %}
         <td class="taskCompletionDate">
             {{ task.completed_date }}
         </td>
