@@ -36,6 +36,10 @@ def tasks():
     return tasks
     
 # handlers
+@flaskApp.route("/")
+def handleRoot():
+    return "Welcome to Asana Status Board. Please navigate to one of the valid sub-paths."
+
 @flaskApp.route("/MegaBits")
 def handleMegaBitsTasks():
     return flask.render_template(statusBoardTemplate, tasks = tasks())
