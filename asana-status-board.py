@@ -45,7 +45,7 @@ def updateRecentTasks():
         if task.assignee:
             task.assignee.avatar = "http://www.gravatar.com/avatar/%s" % (md5.new(task.assignee.email.lower()).hexdigest())
             
-    print "updated tasks: ", [task.name for task in tasks]
+    print "updated tasks"
     flaskApp.data['recentTasks'] = tasks
     flaskApp.data['isUpdatingRecentTasks'] = False
     
