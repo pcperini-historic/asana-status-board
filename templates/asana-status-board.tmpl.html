@@ -7,24 +7,26 @@
     
     .taskAssigneeName
     {
-        width: 128px;
-        font-size: medium;
+        width: 100px;
+        font-size: large;
     }
     
     .taskName
     {
-        font-size: medium;
+        width: 300px;
+        font-size: large;
     }
     
     .taskNotes
     {
         text-align: right;
-        font-size: medium;
+        font-size: large;
     }
     
     .taskCompletionDate
     {
         text-align: right;
+        font-size: large;
     }
 </style>
 
@@ -39,7 +41,7 @@
             {{ task.assignee.name }}
         </td>
         <td class="taskName">
-            "{{ task.name }}"
+            {{ task.name }}
         </td>
         <td class="taskNotes">
             {{ task.notes }}
