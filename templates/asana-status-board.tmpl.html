@@ -1,9 +1,4 @@
 <style>
-    .taskHeaders
-    {
-        text-align: left;
-    }
-    
     .taskAssigneeIcon
     {
         width: 48px;
@@ -37,14 +32,6 @@
 
 <meta http-equiv="refresh" content="{{ refreshrate }}">
 <table id="tasks">
-    <tr class="taskHeaders">
-        <th colspan="2">
-            Assignee
-        </th>
-        <th colspan="2">
-            Task
-        </th>
-    </tr>
     {% for task in tasks %}
     <tr>
         <td class="taskAssigneeIcon">
