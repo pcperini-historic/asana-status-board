@@ -36,7 +36,8 @@ def updateRecentTasks():
         tasks.extend(api.get_tasks(int(project.id), fields = ["name", "completed_at", "assignee", "notes"]))
      
     for task in tasks:
-        task.completed_at = datetime.datetime.strptime(task.completed_at, "%Y-%m-%dT%H:%M:%S.%fZ") if task.completed_at else datetime.datetime.fromtimestamp(0) 
+        task.completed_at = datetime.datetime.strptime(task.completed_at, "%Y-%m-%dT%H:%M:%S.%fZ") if task.completed_at else datetime.datetime.fromtimestamp(0)
+        task.completed_date = datetime.datetime.stftime(task.completed_at, "%m/%d/%y")
     tasks = sorted(tasks, key = lambda task: task.completed_at, reverse = True)[:min(len(tasks), maximumNumberOfTasks)]
     
     for task in tasks:

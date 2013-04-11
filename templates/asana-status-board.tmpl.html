@@ -2,18 +2,20 @@
 <table id="tasks">
     {% for task in tasks %}
     <tr>
-        <td class="taskAssigneeIcon">
+        <td class="taskAssigneeIcon" style="width: 57px">
             <img src="{{ task.assignee.avatar }}">
         </td>
+        <td class="taskAssigneeName" style="width: 257px;">
+            {{ task.assignee.name }}
         </td>
-        <td class="taskName">
-            "{{ task.name }}" was completed.
+        <td class="taskName" style="font-size: small;">
+            "{{ task.name }}"
         </td>
-        <td class="taskNotes">
+        <td class="taskNotes" style="text-align: right;">
             {{ task.notes }}
         </td>
-        <td class="taskCompletionDate">
-            {{ task.completed_at }}
+        <td class="taskCompletionDate" style="width: 257px;">
+            {{ task.completed_date }}
         </td>
     </tr>
     {% endfor %}
