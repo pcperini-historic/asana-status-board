@@ -7,8 +7,8 @@ from libs import pyasana
 from libs.async import async
 
 # constants
-apiKey = "14THihfO.MBsmW5MxmCFrjFsNkFyivKd"
-workspaceID = "3799843448328"
+apiKey = "<YOUR API KEY>"
+workspaceID = "<YOUR WORKSPACE ID>"
 maximumNumberOfTasks = 5
 pageRefreshRate = 120 #seconds
 
@@ -54,7 +54,7 @@ def updateRecentTasks():
 def handleRoot():
     return "Welcome to Asana Status Board. Please navigate to one of the valid sub-paths."
 
-@flaskApp.route("/MegaBits")
+@flaskApp.route("/<YOUR WORKSPACE NAME>")
 def handleMegaBitsTasks():
     updateRecentTasks()
     return flask.render_template(
