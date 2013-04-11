@@ -1,20 +1,50 @@
+<style>
+    .taskAssigneeIcon
+    {
+        width: 48px;
+        text-align: center;
+    }
+    
+    .taskAssigneeName
+    {
+        width: 128px;
+        font-size: medium;
+    }
+    
+    .taskName
+    {
+        font-size: medium;
+    }
+    
+    .taskNotes
+    {
+        text-align: right;
+        font-size: medium;
+    }
+    
+    .taskCompletionDate
+    {
+        text-align: right;
+    }
+</style>
+
 <meta http-equiv="refresh" content="{{ refreshrate }}">
 <table id="tasks">
     {% for task in tasks %}
     <tr>
-        <td class="taskAssigneeIcon" style="width: 57px">
+        <td class="taskAssigneeIcon">
             <img src="{{ task.assignee.avatar }}">
         </td>
-        <td class="taskAssigneeName" style="width: 257px;">
+        <td class="taskAssigneeName">
             {{ task.assignee.name }}
         </td>
-        <td class="taskName" style="font-size: small;">
+        <td class="taskName">
             "{{ task.name }}"
         </td>
-        <td class="taskNotes" style="text-align: right;">
+        <td class="taskNotes">
             {{ task.notes }}
         </td>
-        <td class="taskCompletionDate" style="width: 257px;">
+        <td class="taskCompletionDate">
             {{ task.completed_date }}
         </td>
     </tr>
