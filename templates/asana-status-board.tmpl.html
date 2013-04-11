@@ -1,0 +1,19 @@
+<table id="tasks">
+    {% for task in tasks %}
+    <tr>
+        <td class="taskAssigneeIcon">
+            <img src="{{ task.assignee.avatar }}">
+        </td>
+        </td>
+        <td class="taskName">
+            "{{ task.name }}" was completed.
+        </td>
+        <td class="taskNotes">
+            {{ task.notes }}
+        </td>
+        <td class="taskCompletionDate">
+            {{ task.completed_at }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
